@@ -6,7 +6,7 @@
 int tailles_paquets[100];
 int nb_paquets = 0;
 
-void f(char *nom) {
+void analyser_paquets(char *nom) {
     FILE *fp = fopen(nom, "r");
     char buf[256];
     int i, taille_totale, taille_max, taille_min, nb_paquets_sup_mtu;
