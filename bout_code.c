@@ -6,19 +6,19 @@
 int tailles_paquets[100];
 int nb_paquets = 0;
 
-void analyser_paquets(char *nom) {
-    FILE *fp = fopen(nom, "r");
-    char buf[256];
+void analyser_paquets(char *nom_fichier) {
+    FILE *fichier = fopen(nom_fichier, "r");
+    char ligne[256];
     int i, taille_totale, taille_max, taille_min, nb_paquets_sup_mtu;
-    if (fp != NULL) {
+    if (fichier != NULL) {
         nb_paquets = 0;
-        while (fgets(buf, 256, fp) != NULL) {
+        while (fgets(ligne, 256, fichier) != NULL) {
             if (nb_paquets < 100) {
-                tailles_paquets[nb_paquets] = atoi(buf);
+                tailles_paquets[nb_paquets] = atoi(ligne);
                 nb_paquets++;
             }
         }
-        fclose(fp);
+        fclose(fichier);
         taille_totale = 0; taille_max = tailles_paquets[0]; taille_min = tailles_paquets[0]; nb_paquets_sup_mtu = 0;
         for (i = 0; i < nb_paquets; i++) {
             taille_totale = taille_totale + tailles_paquets[i];
@@ -43,7 +43,7 @@ void analyser_paquets(char *nom) {
             printf("Fichier vide\n");
         }
     } else {
-        printf("Erreur ouverture %s\n", nom);
+        printf("Erreur ouverture %s\n", nom_fichier);
     }
 }
 
