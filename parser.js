@@ -1,3 +1,3 @@
 export function parse(stream) {
-  return ['moveBackward'];
+  return ['stop'];
 }
