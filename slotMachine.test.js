@@ -5,7 +5,7 @@ import { slotMachine } from "./slotMachine.js";
  function validateTwoFirstSymbols() {
     //init
     const bet = 5;
-    const result = ['+', '+', '%'];
+    const result = ['%', '+', '+'];
 
     //exec
     
