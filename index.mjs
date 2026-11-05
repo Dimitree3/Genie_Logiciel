@@ -1,5 +1,4 @@
 // index.mjs
-import * as fs from "fs";
 
 
 
