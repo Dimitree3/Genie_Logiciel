@@ -8,3 +8,7 @@ export function parse(stream) {
       return ['stop'];
   }
 }
+
+export function parse(stream) {
+  return stream.split(' ').map(parseCommand);
+}
