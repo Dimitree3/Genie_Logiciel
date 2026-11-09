@@ -10,6 +10,8 @@ export const accountDAO = {
       return rest;
     });
   },
-  updateAccount(account) {},
+  updateAccount(account) {
+    
+  },
   retrieveAccount(id) {},
 };
