@@ -1,5 +1,4 @@
-import { Account } from "./account.mjs";
-import { accountDAO } from "./accountQueryDAO.mjs";
+import { accountQueryDAO } from "./accountQueryDAO.mjs";
 
 export const accountQuery = {
     getAccountList() {

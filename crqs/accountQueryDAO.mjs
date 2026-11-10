@@ -1,9 +1,10 @@
+import { ACCOUNT_LIST } from "./database.mjs";
+import { accountSummaryList } from "./queryDatabase.mjs";
+
 export const accountQueryDAO = {
     retrieveAccountList() {
-        return ACCOUNT_LIST.map((account) => {
-          const { creationDate, ...rest } = account;
-          return rest;
-        });
+        // Lecture depuis la BDD dédiée aux query (copie pour ne pas exposer la BDD)
+        return accountSummaryList.map((account) => ({ ...account }));
       },
     retrieveAccount(id) {
         const account = ACCOUNT_LIST.find((a) => a.id === id);
